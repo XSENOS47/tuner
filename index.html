@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Гитарный тюнер — стандартный строй</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="wrap">
+      <header class="hero">
+        <div class="badge">Standard E tuning</div>
+        <h1>Тюнер для шестиструнной</h1>
+        <p>Работает в браузере. Дайте доступ к микрофону и подстройте струну до нуля центов.</p>
+      </header>
+
+      <section class="panel">
+        <div class="status-row">
+          <button id="startBtn" class="primary">Включить микрофон</button>
+          <div id="status" class="status">Ожидаю запуска</div>
+        </div>
+
+        <div class="display">
+          <div class="note" id="note">—</div>
+          <div class="subnote" id="subnote">Выберите струну и сыграйте ноту</div>
+        </div>
+
+        <div class="meter">
+          <div class="meter-track"></div>
+          <div class="meter-center"></div>
+          <div class="meter-needle" id="needle"></div>
+          <div class="meter-labels">
+            <span>-50¢</span>
+            <span>0¢</span>
+            <span>+50¢</span>
+          </div>
+        </div>
+
+        <div class="readouts">
+          <div class="readout">
+            <div class="label">Частота</div>
+            <div class="value" id="frequency">— Hz</div>
+          </div>
+          <div class="readout">
+            <div class="label">Цель</div>
+            <div class="value" id="target">— Hz</div>
+          </div>
+          <div class="readout">
+            <div class="label">Отклонение</div>
+            <div class="value" id="cents">— ¢</div>
+          </div>
+        </div>
+
+        <div class="helper" id="helper">Подсказка появится тут</div>
+      </section>
+
+      <section class="strings">
+        <h2>Стандартный строй</h2>
+        <div class="string-grid" id="stringGrid"></div>
+      </section>
+
+      <footer class="footer">
+        <p>Совет: играйте отдельную струну и подождите 1–2 секунды, чтобы частота стабилизировалась.</p>
+      </footer>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>

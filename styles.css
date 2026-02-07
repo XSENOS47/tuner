@@ -1,0 +1,245 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;600&display=swap");
+
+:root {
+  color-scheme: light;
+  --bg: #f3f1ec;
+  --bg-accent: #e7e0d6;
+  --ink: #2b2723;
+  --muted: #6c635b;
+  --accent: #d5573b;
+  --accent-2: #2f7ea8;
+  --panel: #fffaf2;
+  --shadow: rgba(25, 21, 17, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Space Grotesk", system-ui, sans-serif;
+  color: var(--ink);
+  background: radial-gradient(circle at top, #ffffff 0%, var(--bg) 45%, var(--bg-accent) 100%);
+}
+
+.wrap {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 32px 20px 56px;
+}
+
+.hero {
+  display: grid;
+  gap: 12px;
+  margin-bottom: 28px;
+}
+
+.badge {
+  width: fit-content;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: var(--ink);
+  color: #fff;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(28px, 4vw, 44px);
+}
+
+p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.panel {
+  background: var(--panel);
+  border-radius: 24px;
+  padding: 24px;
+  box-shadow: 0 20px 40px var(--shadow);
+  display: grid;
+  gap: 22px;
+}
+
+.status-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.primary {
+  border: none;
+  background: var(--accent);
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: 14px;
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
+  box-shadow: 0 10px 20px rgba(213, 87, 59, 0.3);
+}
+
+.primary:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.status {
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.display {
+  text-align: center;
+  display: grid;
+  gap: 6px;
+}
+
+.note {
+  font-size: clamp(56px, 10vw, 92px);
+  font-weight: 700;
+}
+
+.subnote {
+  color: var(--muted);
+  font-size: 15px;
+}
+
+.meter {
+  position: relative;
+  height: 140px;
+  padding: 28px 10px 36px;
+}
+
+.meter-track {
+  height: 8px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #d45e4a 0%, #f2c66a 45%, #60b77b 50%, #f2c66a 55%, #d45e4a 100%);
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.2);
+}
+
+.meter-center {
+  position: absolute;
+  left: 50%;
+  top: 22px;
+  width: 2px;
+  height: 40px;
+  background: var(--ink);
+  transform: translateX(-50%);
+}
+
+.meter-needle {
+  position: absolute;
+  left: 50%;
+  top: 14px;
+  width: 3px;
+  height: 56px;
+  background: var(--accent-2);
+  border-radius: 999px;
+  transform: translateX(-50%) rotate(0deg);
+  transform-origin: bottom;
+  transition: transform 120ms ease-out;
+}
+
+.meter-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: 12px;
+}
+
+.readouts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 14px;
+}
+
+.readout {
+  background: #fff;
+  border-radius: 16px;
+  padding: 14px;
+  box-shadow: 0 10px 20px rgba(34, 34, 34, 0.08);
+}
+
+.readout .label {
+  text-transform: uppercase;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+}
+
+.readout .value {
+  font-family: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 20px;
+  font-weight: 600;
+  margin-top: 6px;
+}
+
+.helper {
+  font-size: 15px;
+  padding: 12px 16px;
+  background: #f4eee6;
+  border-left: 4px solid var(--accent);
+  border-radius: 10px;
+}
+
+.strings {
+  margin-top: 36px;
+}
+
+.strings h2 {
+  margin: 0 0 12px;
+  font-size: 20px;
+}
+
+.string-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 12px;
+}
+
+.string-card {
+  background: #fff;
+  padding: 12px 14px;
+  border-radius: 14px;
+  border: 1px solid #efe7db;
+  display: grid;
+  gap: 6px;
+}
+
+.string-card .string-name {
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.string-card .string-freq {
+  font-family: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.footer {
+  margin-top: 28px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+@media (max-width: 640px) {
+  .status-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .meter {
+    height: 120px;
+  }
+}
