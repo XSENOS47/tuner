@@ -20,6 +20,20 @@
           <div id="status" class="status">Ожидаю запуска</div>
         </div>
 
+        <div class="control-row">
+          <label class="control">
+            <span>Строй</span>
+            <select id="tuningSelect"></select>
+          </label>
+          <div class="control mode">
+            <span>Режим</span>
+            <div class="chips">
+              <button id="autoModeBtn" class="chip active" type="button">Авто</button>
+              <button id="manualModeBtn" class="chip" type="button">По струне</button>
+            </div>
+          </div>
+        </div>
+
         <div class="display">
           <div class="note" id="note">—</div>
           <div class="subnote" id="subnote">Выберите струну и сыграйте ноту</div>
@@ -35,6 +49,7 @@
             <span>+50¢</span>
           </div>
         </div>
+        <div class="meter-info">Центы (¢) — это 1/100 полутона. 0¢ означает точную ноту.</div>
 
         <div class="readouts">
           <div class="readout">
@@ -56,6 +71,7 @@
 
       <section class="strings">
         <h2>Стандартный строй</h2>
+        <p class="strings-sub">Нажмите на струну, чтобы зафиксировать настройку вручную.</p>
         <div class="string-grid" id="stringGrid"></div>
       </section>
 
